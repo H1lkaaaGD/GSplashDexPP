@@ -4,6 +4,8 @@
 	
 	Developed by Chillz
 	
+	Translated by GSplash
+	
 	Dex++ is a revival of Moon's Dex, made to fulfill Moon's Dex prophecy.
 ]]
 
@@ -91,7 +93,7 @@ local function main()
 
 	-- StarterGui.ScreenGui
 	window = Lib.Window.new()
-	window:SetTitle("Console")
+	window:SetTitle("Консоль")
 	window:Resize(500,400)
 	Console.Window = window
 
@@ -332,7 +334,7 @@ local function main()
 	G2L["15"]["BackgroundTransparency"] = 1;
 	G2L["15"]["Size"] = UDim2.new(1, 0, 1, 0);
 	G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-	G2L["15"]["Text"] = [[Clear]];
+	G2L["15"]["Text"] = [[Очистить]];
 
 
 	-- StarterGui.ScreenGui.Console.Clear.UIPadding
@@ -425,7 +427,7 @@ local function main()
 	G2L["1e"]["BackgroundTransparency"] = 1;
 	G2L["1e"]["Size"] = UDim2.new(1, 0, 1, 0);
 	G2L["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-	G2L["1e"]["Text"] = [[Auto Scroll]];
+	G2L["1e"]["Text"] = [[Авто Скролл]];
 
 
 	-- StarterGui.ScreenGui.Console.AutoScroll.UIPadding
@@ -1837,7 +1839,7 @@ local function main()
 			selection:Clear()
 		end})
 
-		context:Register("COPY",{Name = "Copy", IconMap = Explorer.MiscIcons, Icon = "Copy", DisabledIcon = "Copy_Disabled", Shortcut = "Ctrl+C", OnClick = function()
+		context:Register("COPY",{Name = "Копировать", IconMap = Explorer.MiscIcons, Icon = "Copy", DisabledIcon = "Copy_Disabled", Shortcut = "Ctrl+C", OnClick = function()
 			local clone = game.Clone
 			local sList,newClipboard = selection.List,{}
 			local count = 1
@@ -1852,7 +1854,6 @@ local function main()
 			clipboard = newClipboard
 		end})
 
-		context:Register("PASTE",{Name = "Paste Into", IconMap = Explorer.MiscIcons, Icon = "Paste", DisabledIcon = "Paste_Disabled", Shortcut = "Ctrl+Shift+V", OnClick = function()
 			local sList = selection.List
 			local newSelection = {}
 			local count = 1
@@ -1876,7 +1877,7 @@ local function main()
 			end
 		end})
 
-		context:Register("DUPLICATE",{Name = "Duplicate", IconMap = Explorer.MiscIcons, Icon = "Copy", DisabledIcon = "Copy_Disabled", Shortcut = "Ctrl+D", OnClick = function()
+		context:Register("DUPLICATE",{Name = "Дублировать", IconMap = Explorer.MiscIcons, Icon = "Copy", DisabledIcon = "Copy_Disabled", Shortcut = "Ctrl+D", OnClick = function()
 			local clone = game.Clone
 			local sList = selection.List
 			local newSelection = {}
@@ -1900,7 +1901,7 @@ local function main()
 			end
 		end})
 
-		context:Register("DELETE",{Name = "Delete", IconMap = Explorer.MiscIcons, Icon = "Delete", DisabledIcon = "Delete_Disabled", Shortcut = "Del", OnClick = function()
+		context:Register("DELETE",{Name = "Удалить", IconMap = Explorer.MiscIcons, Icon = "Delete", DisabledIcon = "Delete_Disabled", Shortcut = "Del", OnClick = function()
 			local destroy = game.Destroy
 			local sList = selection.List
 			for i = 1,#sList do
@@ -1916,14 +1917,14 @@ local function main()
 			end
 			selection:Clear()
 		end})
-		context:Register("RENAME",{Name = "Rename", IconMap = Explorer.MiscIcons, Icon = "Rename", DisabledIcon = "Rename_Disabled", Shortcut = "F2", OnClick = function()
+		context:Register("RENAME",{Name = "Переименовать", IconMap = Explorer.MiscIcons, Icon = "Rename", DisabledIcon = "Rename_Disabled", Shortcut = "F2", OnClick = function()
 			local sList = selection.List
 			if sList[1] then
 				Explorer.SetRenamingNode(sList[1])
 			end
 		end})
 
-		context:Register("GROUP",{Name = "Group", IconMap = Explorer.MiscIcons, Icon = "Group", DisabledIcon = "Group_Disabled", Shortcut = "Ctrl+G", OnClick = function()
+		context:Register("GROUP",{Name = "Сгруппировать", IconMap = Explorer.MiscIcons, Icon = "Group", DisabledIcon = "Group_Disabled", Shortcut = "Ctrl+G", OnClick = function()
 			local sList = selection.List
 			if #sList == 0 then return end
 
@@ -1938,7 +1939,7 @@ local function main()
 			end
 		end})
 
-		context:Register("UNGROUP",{Name = "Ungroup", IconMap = Explorer.MiscIcons, Icon = "Ungroup", DisabledIcon = "Ungroup_Disabled", Shortcut = "Ctrl+U", OnClick = function()
+		context:Register("UNGROUP",{Name = "Разгруппировать", IconMap = Explorer.MiscIcons, Icon = "Ungroup", DisabledIcon = "Ungroup_Disabled", Shortcut = "Ctrl+U", OnClick = function()
 			local newSelection = {}
 			local count = 1
 			local isa = game.IsA
@@ -1975,7 +1976,7 @@ local function main()
 			end
 		end})
 
-		context:Register("SELECT_CHILDREN",{Name = "Select Children", IconMap = Explorer.MiscIcons, Icon = "SelectChildren", DisabledIcon = "SelectChildren_Disabled", OnClick = function()
+		context:Register("SELECT_CHILDREN",{Name = "Выделить внутренности", IconMap = Explorer.MiscIcons, Icon = "SelectChildren", DisabledIcon = "SelectChildren_Disabled", OnClick = function()
 			local newSelection = {}
 			local count = 1
 			local sList = selection.List
@@ -1999,7 +2000,7 @@ local function main()
 			end
 		end})
 
-		context:Register("JUMP_TO_PARENT",{Name = "Jump to Parent", IconMap = Explorer.MiscIcons, Icon = "JumpToParent", OnClick = function()
+		context:Register("JUMP_TO_PARENT",{Name = "Перейти к род. объекту", IconMap = Explorer.MiscIcons, Icon = "JumpToParent", OnClick = function()
 			local newSelection = {}
 			local count = 1
 			local sList = selection.List
@@ -2020,7 +2021,7 @@ local function main()
 			end
 		end})
 
-		context:Register("TELEPORT_TO",{Name = "Teleport To", IconMap = Explorer.MiscIcons, Icon = "TeleportTo", OnClick = function()
+		context:Register("TELEPORT_TO",{Name = "Телепортироваться к", IconMap = Explorer.MiscIcons, Icon = "TeleportTo", OnClick = function()
 			local sList = selection.List
 			local plrRP = plr.Character and plr.Character:FindFirstChild("HumanoidRootPart")
 
@@ -2074,7 +2075,7 @@ local function main()
 		end})
 
 		local OldAnimation
-		context:Register("LOAD_ANIMATION",{Name = "Load Animation", IconMap = Explorer.MiscIcons, Icon = "Play", OnClick = function()
+		context:Register("LOAD_ANIMATION",{Name = "Загрузить анимацию", IconMap = Explorer.MiscIcons, Icon = "Play", OnClick = function()
 			local sList = selection.List
 
 			local Humanoid = plr.Character and plr.Character:FindFirstChild("Humanoid")
@@ -2093,7 +2094,7 @@ local function main()
 			end
 		end})
 
-		context:Register("STOP_ANIMATION",{Name = "Stop Animation", IconMap = Explorer.MiscIcons, Icon = "Pause", OnClick = function()
+		context:Register("STOP_ANIMATION",{Name = "Остановить анимацию", IconMap = Explorer.MiscIcons, Icon = "Pause", OnClick = function()
 			local sList = selection.List
 
 			local Humanoid = plr.Character and plr.Character:FindFirstChild("Humanoid")
@@ -2111,7 +2112,7 @@ local function main()
 			end
 		end})
 
-		context:Register("EXPAND_ALL",{Name = "Expand All", OnClick = function()
+		context:Register("EXPAND_ALL",{Name = "Развернуть всё", OnClick = function()
 			local sList = selection.List
 
 			local function expand(node)
@@ -2130,7 +2131,7 @@ local function main()
 			Explorer.ForceUpdate()
 		end})
 
-		context:Register("COLLAPSE_ALL",{Name = "Collapse All", OnClick = function()
+		context:Register("COLLAPSE_ALL",{Name = "Свернуть всё", OnClick = function()
 			local sList = selection.List
 
 			local function expand(node)
