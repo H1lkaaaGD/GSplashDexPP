@@ -12,6 +12,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/H1lkaaaGD/GSplashDexP
 ## Спасибо
 - [Chillz](https://github.com/AZYsGithub) – Разработчик Dex++'а
 - [Moon](https://github.com/LorekeeperZinnia/Dex) – Разработчик оригинального Dex explorer'а
+- [H1lkaaaGD](https://github.com/H1lkaaaGD) - Перевод Dex++'а
 
 ## Я в роблоксе
 - [GSplash](https://www.roblox.com/users/6137924683/profile) – Это я
